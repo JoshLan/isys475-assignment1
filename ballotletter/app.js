@@ -8,18 +8,13 @@ var bodyParser = require('body-parser');
 //MONGOOOOOOOOOSE
 var mongoose = require('mongoose');
 
-require('./models/Posts');
-require('./models/Comments');
-
-mongoose.connect('mongodb://localhost/news');
-
+require('./models/Ballots');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
 var app = express();
 
-
+mongoose.connect('mongodb://localhost/bdb');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
